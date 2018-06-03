@@ -21,6 +21,17 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \fignocaption{width = 0.80\textwidth}{figs/monty-hall-goat}
+
+  \begin{quote}
+    \centering
+    {\Large ``\ldots and my yard has so much grass, \\ and I'll teach you tricks, and \ldots''}
+  \end{quote}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
   \[
     C_i: \text{The car is behind door } i\; (i = 1, 2, 3)
   \]
@@ -48,7 +59,7 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \[
-    I_3: \text{I open door } 3 \text{\;\red{and} happen to reveal a goat}
+    I_3: \text{I open door } 3 \text{\;\red{AND} happen to reveal a goat}
   \]
 
   \vspace{0.50cm}
@@ -57,12 +68,14 @@
     \item<2->[\purple{\textsc{Assumption}:}]
       I know what's behind the doors.
     \item<3->[\purple{\textsc{Assumption}:}]
-      If you initially pick the car, then I open a door randomly.
+      I never open the door you initially picked.
     \item<4->[\purple{\textsc{Assumption}:}]
+      If you initially pick the car, then I open a door randomly.
+    \item<5->[\purple{\textsc{Assumption}:}]
       I always open a door to reveal a goat and never the car.
   \end{description}
 
-  \uncover<5->{
+  \uncover<6->{
     \vspace{0.50cm}
     \[
       \red{\boxed{\Pr\set{C_2 \mid I_3, Y_1}}}
@@ -120,7 +133,7 @@
 
   \pause
   \vspace{0.30cm}
-  \centerline{\red{\Large \bf It depends on how I choose the door to open!}}
+  \centerline{\red{\Large \textbf{\textit{It depends on how I choose the door to open!}}}}
 
   \pause
   \vspace{0.30cm}
@@ -170,45 +183,24 @@
   \]
 
   \pause
+  \vspace{0.30cm}
   \[
     \teal{\frac{\Pr\set{C_2 \mid I_3, Y_1}}{\Pr\set{C_1 \mid I_3, Y_1}}} = \frac{\Pr{\set{I_3 \mid C_2, Y_1}}}
     {\Pr\set{I_3 \mid C_1, Y_1}}
   \]
 
-  \pause
-  \[
-    \violet{\boxed{\Pr\set{C_2 \mid I_3, Y_1} > \Pr\set{C_1 \mid I_3, Y_1} \iff \Pr{\set{I_3 \mid C_2, Y_1}} > \Pr{\set{I_3 \mid C_1, Y_1}}}}
-  \]
+  % \pause
+  % \[
+  %   \violet{\boxed{\Pr\set{C_2 \mid I_3, Y_1} > \Pr\set{C_1 \mid I_3, Y_1} \iff \Pr{\set{I_3 \mid C_2, Y_1}} > \Pr{\set{I_3 \mid C_1, Y_1}}}}
+  % \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \[
-    \red{\Pr\set{C_2 \mid I_3, Y_1}} = \frac{\Pr{\set{I_3 \mid C_2, Y_1}}}
-      {\purple{\Pr\set{I_3 \mid C_1, Y_1} + \Pr\set{I_3 \mid C_2, Y_1} + \Pr\set{I_3 \mid C_3, Y_1}}}
-  \]
-  \[
-    \violet{\boxed{\Pr\set{C_2 \mid I_3, Y_1} > \Pr\set{C_1 \mid I_3, Y_1} \iff \Pr{\set{I_3 \mid C_2, Y_1}} > \Pr{\set{I_3 \mid C_1, Y_1}}}}
-  \]
-
-  \pause
-  \vspace{0.30cm}
-  \[
-    \Pr\set{I_3 \mid C_1, Y_1} = \frac{1}{2}
-  \]
-  \[
-    \Pr\set{I_3 \mid C_2, Y_1} = 1
-  \]
-
-  \[
-    \blue{\Pr\set{C_2 \mid I_3, Y_1} = \frac{2}{3}}
-  \]
-
-  \pause
-  \vspace{0.30cm}
   \begin{center}
-    \red{$Q:$ Switching {\it vs.} Choosing between the two remaining doors randomly?}
+    \red{\large $Q:$ Switching {\it vs.} Randomly Choosing}
+    \fignocaption{width = 0.50\textwidth}{figs/backstage}
   \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%
@@ -217,7 +209,7 @@
 \begin{frame}{}
   \[
     \red{\Pr\set{C_2 \mid I_3, Y_1}} = \frac{\Pr{\set{I_3 \mid C_2, Y_1}}}
-      {\purple{\Pr\set{I_3 \mid C_1, Y_1} + \Pr\set{I_3 \mid C_2, Y_1}}}
+      {\purple{\Pr\set{I_3 \mid C_1, Y_1} + \Pr\set{I_3 \mid C_2, Y_1} + \purple{\Pr\set{I_3 \mid C_3, Y_1}}}}
   \]
 
   \pause
@@ -228,7 +220,7 @@
     \Pr\set{I_3 \mid C_2, Y_1} = 1
   \]
   \[
-    \lgray{\Pr\set{I_3 \mid C_3, Y_1} = 0}
+    \Pr\set{I_3 \mid C_3, Y_1} = 0
   \]
 
   \pause
@@ -241,14 +233,13 @@
   \]
 
   \pause
-  \vspace{-0.20cm}
-  \[
-    \violet{\boxed{\Pr\set{C_2 \mid I_3, Y_1} > \Pr\set{C_1 \mid I_3, Y_1} \iff \Pr{\set{I_3 \mid C_2, Y_1}} > \Pr{\set{I_3 \mid C_1, Y_1}}}}
-  \]
+  \centerline{\violet{\boxed{\textsl{\large Always Switch!}}}}
 
   \pause
-  \vspace{-0.20cm}
-  \centerline{\violet{\boxed{\textsl{\large Always Switch!}}}}
+  \[
+    \teal{\frac{\Pr\set{C_2 \mid I_3, Y_1}}{\Pr\set{C_1 \mid I_3, Y_1}}} = \frac{\Pr{\set{I_3 \mid C_2, Y_1}}}
+    {\Pr\set{I_3 \mid C_1, Y_1}}
+  \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -256,13 +247,11 @@
 \begin{frame}{}
   \[
     \red{\Pr\set{C_2 \mid I_3, Y_1}} = \frac{\Pr{\set{I_3 \mid C_2, Y_1}}}
-      {\purple{\Pr\set{I_3 \mid C_1, Y_1} + \Pr\set{I_3 \mid C_2, Y_1}}}
+      {\purple{\Pr\set{I_3 \mid C_1, Y_1} + \Pr\set{I_3 \mid C_2, Y_1} + \purple{\Pr\set{I_3 \mid C_3, Y_1}}}}
   \]
 
-  \[
-    \violet{\boxed{\Pr\set{C_2 \mid I_3, Y_1} > \Pr\set{C_1 \mid I_3, Y_1} \iff \Pr{\set{I_3 \mid C_2, Y_1}} > \Pr{\set{I_3 \mid C_1, Y_1}}}}
-  \]
-
+  \pause
+  \vspace{0.30cm}
   \begin{columns}
     \column{0.45\textwidth}
       \centerline{\textsc{\purple{Assumption: I know.}}}
@@ -271,7 +260,10 @@
 	\Pr\set{I_3 \mid C_1, Y_1} = \frac{1}{2}
       \]
       \[
-	\teal{\Pr\set{I_3 \mid C_2, Y_1} = 1}
+	\red{\Pr\set{I_3 \mid C_2, Y_1} = 1}
+      \]
+      \[
+	\Pr\set{I_3 \mid C_3, Y_1} = 0
       \]
 
       \[
@@ -281,7 +273,7 @@
       \pause
       \centerline{\textsc{\purple{Assumption: I don't know either.}}}
       \begin{center}
-	{Opens one randomly that happens not to reveal the car.}
+	{Opens one randomly and happens to reveal a goat.}
       \end{center}
 
       \pause
@@ -290,7 +282,10 @@
 	\Pr\set{I_3 \mid C_1, Y_1} = \frac{1}{2}
       \]
       \[
-	\teal{\Pr\set{I_3 \mid C_2, Y_1} = \frac{1}{2}}
+	\red{\Pr\set{I_3 \mid C_2, Y_1} = \frac{1}{2}}
+      \]
+      \[
+	\Pr\set{I_3 \mid C_3, Y_1} = 0
       \]
 
       \[

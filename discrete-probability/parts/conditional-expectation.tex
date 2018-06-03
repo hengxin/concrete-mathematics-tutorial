@@ -2,13 +2,17 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \begin{definition}[Expectation]
+    \[
+      \E[X] = \sum_{x} x \Pr(X = x)
+    \]
+  \end{definition}
+
+  \pause
+  \vspace{0.60cm}
   \begin{definition}[Conditional Expectation \red{on an Event}]
     \[
       \E[X \mid E] = \sum_{x} x \Pr(X = x \mid E)
-    \]
-
-    \[
-      \teal{\Big(\E[X] = \sum_{x} x \Pr(X = x)\Big)}
     \]
   \end{definition}
 \end{frame}
@@ -16,7 +20,7 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{theorem}[\uncover<2->{\red{The Law of Total Expectation}} (CS Theorem $5.23$)]
+  \begin{theorem}[The Law of Total Expectation]
     Let $X$ be a random variable defined on a sample space $\Omega$.
 
     Let $E_1, E_2, \cdots, E_n$ be a \red{partition} of $\Omega$.
@@ -26,60 +30,31 @@
     \]
   \end{theorem}
 
-  \vspace{0.50cm}
-  \uncover<3->{
-    \begin{proof}
-      \centerline{By definition.} 
+  \pause
+  \vspace{0.30cm}
+  \begin{theorem}[The Law of Total Probability]
+    Let $X$ be a random variable defined on a sample space $\Omega$.
 
-      \uncover<4->{
-	\[
-	  \sum_{x}x \sum_{i=1}^{n} \Pr(X = x, E_i) = \sum_{i=1}^{n} \sum_{x} x \Pr(X = x, E_i)
-	\]
-      }
-    \end{proof}
-  }
+    Let $E_1, E_2, \cdots, E_n$ be a \red{partition} of $\Omega$.
+
+    \[
+      \Pr[X = x] = \sum_{i=1}^{n} \Pr[X = x \mid E_i] \Pr(E_i)
+    \]
+  \end{theorem}
+
+  % \begin{proof}
+  %   \centerline{By definition.} 
+
+  %   \[
+  %     \sum_{x}x \sum_{i=1}^{n} \Pr(X = x, E_i) = \sum_{i=1}^{n} \sum_{x} x \Pr(X = x, E_i)
+  %   \]
+  % \end{proof}
 \end{frame}
 %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{exampleblock}{\red{($\nexists$) Rational Person} Playing a Card Game (CS Problem $5.6-4$)}
-    \begin{columns}
-      \column{0.50\textwidth}
-	\fignocaption{width = 0.70\textwidth}{figs/JQKA}
-      \column{0.50\textwidth}
-	\begin{description}
-	  \item[$A:$] $\$ 1.00$; \purple{Repeat}
-	  \item[$J:$] $\$ 2.00$; End
-	  \item[$K:$] $\$ 3.00$; End
-	  \item[$Q:$] $\$ 4.00$; End
-	\end{description}
-    \end{columns}
-  \end{exampleblock}
-
-  \pause
-  \centerline{Conditioning on the \red{first} draw $c$}
-  \vspace{-0.40cm}
-  \[
-    \E[X] = \frac{1}{4}\Big(\teal{\E[X \mid c = A]} + \E[X \mid c = J] + \E[X \mid c = K] + \E[X \mid c = Q]\Big)
-  \]
-
-  \pause
-  \vspace{-0.40cm}
-  \[
-    \teal{\E[X \mid c = A]} = \E[X] + 1
-  \]
-
-  \pause
-  \[
-    4 \ast A + 1 \ast Q = \$ 8.00
-  \]
-\end{frame}
-%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{exampleblock}{In-class Exercise: Coin Pattern (Provided by Yifan Pei)}
+  \begin{exampleblock}{Coin Flipping Problem}
     \fignocaption{width = 0.40\textwidth}{figs/coin}
 
     \vspace{-0.50cm}
@@ -92,20 +67,23 @@
   \end{exampleblock}
 
   \pause
-  \vspace{0.30cm}
-  \centerline{Conditioning on the first $3$ tosses}
+  \fignocaption{width = 0.70\textwidth}{figs/HHH-automaton}
 
-  \pause
-  \vspace{-0.40cm}
-  \[
-    T, \quad HT, \quad HHT, \quad HHH
-  \]
+  % \pause
+  % \vspace{0.30cm}
+  % \centerline{Conditioning on the first $3$ tosses}
 
-  \pause
-  \vspace{-0.40cm}
-  \[
-    \E[X] = \frac{1}{2} (\E[X] + 1) + \frac{1}{4} (\E[X] + 2) + \frac{1}{8} (\E[X] + 3) + \frac{1}{8} \times 3
-  \]
+  % \pause
+  % \vspace{-0.40cm}
+  % \[
+  %   T, \quad HT, \quad HHT, \quad HHH
+  % \]
+
+  % \pause
+  % \vspace{-0.40cm}
+  % \[
+  %   \E[X] = \frac{1}{2} (\E[X] + 1) + \frac{1}{4} (\E[X] + 2) + \frac{1}{8} (\E[X] + 3) + \frac{1}{8} \times 3
+  % \]
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -115,16 +93,18 @@
     \violet{\boxed{X: \# \text{ of tosses to get } HHH}}
   \]
 
+  \fignocaption{width = 0.70\textwidth}{figs/HHH-automaton}
+
+  \pause
+  \centerline{Conditioning on the first $3$ tosses}
   \[
     T, \quad HT, \quad HHT, \quad HHH
   \]
 
-  \fignocaption{width = 0.70\textwidth}{figs/HHH-automaton}
-
+  \pause
   \[
     \E[X] = \frac{1}{2} (\E[X] + 1) + \frac{1}{4} (\E[X] + 2) + \frac{1}{8} (\E[X] + 3) + \frac{1}{8} \times 3
   \]
-
 \end{frame}
 %%%%%%%%%%%%%%%
 
@@ -138,8 +118,9 @@
     T, \quad HT, \quad HHH, \quad HHT
   \]
 
+  \pause
   \[
-    \E[X] = \frac{1}{2} (\E[X] + 1) + \frac{1}{4} (\E[X] + 2) + \frac{1}{8} (\textcolor<2->{red}{\E[X] + 3}) + \frac{1}{8} \times 3
+    \E[X] = \frac{1}{2} (\E[X] + 1) + \frac{1}{4} (\E[X] + 2) + \frac{1}{8} (\textcolor<3->{red}{\E[X] + 3}) + \frac{1}{8} \times 3
   \]
 
   % \pause
@@ -230,12 +211,6 @@
 \begin{frame}{}
   \[
     \red{\boxed{A : A = \sum_{k=1}^{n} 2^{k-1} [A^{(k)} = A_{(k)}] \qquad \E[X_{A}] = 2 (A : A)}}
-  \]
-
-  \pause
-  \vspace{0.30cm}
-  \[
-    A = HHH \qquad A = HHT
   \]
 
   \pause

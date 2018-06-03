@@ -2,6 +2,24 @@
 
 %%%%%%%%%%%%%%%
 \begin{frame}{}
+  \begin{theorem}[Computing Expectation]
+    Let $X$ be a discrete random variable that takes on \red{only nonnegative integer values} $\mathbb{N}$.
+
+    \[
+      \E[X] = \textcolor{teal!60}{\sum_{i=1}^{\infty} i \Pr(X = i)} = \sum_{i=1}^{\infty} \Pr(X \ge i)
+    \]
+  \end{theorem}
+  \pause
+  \begin{proof}
+    \[
+      \sum_{j=1}^{\infty} \sum_{i=1}^{j} \Pr(X = j) = \sum_{i=1}^{\infty} \sum_{j=i}^{\infty} \Pr(X = j)
+    \]
+  \end{proof}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
   \begin{exampleblock}{Searching an Unsorted Array (CLRS Problem $5-2\; (f)$)}
     \input{algs/deterministic-search}
 
