@@ -87,18 +87,18 @@
 %%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{align*}
-    \red{\Pr\set{C_2 \mid I_3, Y_1}} &= \frac{\Pr\set{C_2, I_3, Y_1}}{\Pr\set{I_3, Y_1}} 
-    \onslide<2->{= \frac{\purple{\Pr{\set{I_3, Y_1 \mid C_2}}} \Pr\set{C_2}}{\Pr\set{I_3 \mid Y_1} \Pr\set{Y_1}} \\}
-    \onslide<3->{&= \frac{\purple{\Pr{\set{I_3, Y_1 \mid C_2}}}}{\Pr\set{I_3 \mid Y_1}}}
+    \red{\Pr\set{C_2 \mid I_3, Y_1}} &= \frac{\Pr\set{C_2, I_3, Y_1}}{\Pr\set{I_3, Y_1}} \\[6pt]
+    \onslide<2->{&= \frac{\Pr{\set{I_3 \mid C_2, Y_1}} \Pr{\set{C_2 \mid Y_1}} \Pr\set{Y_1}}{\Pr\set{I_3 \mid Y_1} \Pr\set{Y_1}} \\[6pt]}
+    \onslide<3->{&= \frac{\Pr{\set{I_3 \mid C_2, Y_1}} \purple{\Pr{\set{C_2 \mid Y_1}}}}{\Pr\set{I_3 \mid Y_1}}}
   \end{align*}
 
-  \begin{align*}
-    \onslide<4->{\purple{\Pr{\set{I_3, Y_1 \mid C_2}}} &= \Pr{\set{I_3 \mid C_2, Y_1} \Pr{\set{Y_1 \mid C_2}}} \\}
-    \onslide<5->{&= \frac{1}{3} \Pr{\set{I_3 \mid C_2, Y_1}}}
-  \end{align*}
+  % \begin{align*}
+  %   \onslide<4->{\purple{\Pr{\set{I_3, Y_1 \mid C_2}}} &= \Pr{\set{I_3 \mid C_2, Y_1} \Pr{\set{Y_1 \mid C_2}}} \\}
+  %   \onslide<5->{&= \frac{1}{3} \Pr{\set{I_3 \mid C_2, Y_1}}}
+  % \end{align*}
 
   \begin{align*}
-    \onslide<6->{\red{\Pr\set{C_2 \mid I_3, Y_1}} = \frac{\Pr{\set{I_3 \mid C_2, Y_1}}}{3 \Pr\set{I_3 \mid Y_1}}}
+    \onslide<4->{\red{\Pr\set{C_2 \mid I_3, Y_1}} = \frac{\Pr{\set{I_3 \mid C_2, Y_1}}}{3 \Pr\set{I_3 \mid Y_1}}}
   \end{align*}
 \end{frame}
 %%%%%%%%%%%%%%%
